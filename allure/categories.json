@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Bot check / access blocked",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": "(?s).*BotCheckError.*"
+  },
+  {
+    "name": "Locator not found",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": "(?s).*(waiting for (locator|getBy)|strict mode violation|Timeout \\d+ms exceeded).*"
+  },
+  {
+    "name": "Network / API error",
+    "matchedStatuses": ["failed", "broken"],
+    "messageRegex": "(?s).*(net::ERR_|returned [45]\\d\\d).*"
+  },
+  { "name": "Assertion failed", "matchedStatuses": ["failed"], "messageRegex": "(?s).*expect\\(.*" }
+]

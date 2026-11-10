@@ -1,0 +1,19 @@
+[
+  { "id": "shoes-under-220", "query": "shoes", "maxPrice": 220, "currency": "ILS", "limit": 5 },
+  { "id": "headphones-under-150", "query": "wireless headphones", "maxPrice": 150, "currency": "ILS", "limit": 3 },
+  {
+    "id": "iphone-case-under-4",
+    "query": "iphone case",
+    "maxPrice": 4,
+    "currency": "ILS",
+    "limit": 3
+  },
+  {
+    "id": "no-results-under-1",
+    "query": "rolex submariner",
+    "maxPrice": 1,
+    "currency": "ILS",
+    "limit": 5,
+    "expectEmpty": true
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "name": "ebay-e2e-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E purchase-under-budget scenario on eBay with Playwright and TypeScript",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:unit": "playwright test --project=unit",
+    "test:offline": "playwright test --project=offline",
+    "test:e2e": "playwright test --project=e2e",
+    "test:report": "npm run report:clean; playwright test; npm run report:allure",
+    "report:clean": "rm -rf allure-results allure-report",
+    "report:allure": "mkdir -p allure-results && cp allure/categories.json allure-results/ && allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "report:html": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^26.6.6",
+    "allure-commandline": "^2.46.1",
+    "allure-js-commons": "^3.14.0",
+    "allure-playwright": "^3.14.0",
+    "dotenv": "^18.0.9",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "zod": "^4.6.7"
+  }
+}
