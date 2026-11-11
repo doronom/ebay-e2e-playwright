@@ -1,6 +1,6 @@
 # Search test review
 
-Static review of the search test below. I didn't run it. The URL and selectors in the fixes are placeholders, since I haven't seen the real app.
+Static review of the search test below. I didn't run it. The URL and selectors in the fixes are placeholders.
 
 ```python
 from playwright.sync_api import sync_playwright
