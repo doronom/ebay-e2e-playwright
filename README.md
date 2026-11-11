@@ -58,3 +58,4 @@ The login runs once in a Playwright `setup` project and saves the session to `.a
 - The sign-in error and verification page texts were never seen live, because eBay blocked every automated sign-in.
 
 The bug review for task 2 is in [ReadMeAIBugs.md](ReadMeAIBugs.md).
+A run report is in `docs/report`: `index.html` (Allure, open it in a browser after downloading) and `junit.xml`.

@@ -1,0 +1,79 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="1" errors="1" time="12.548144">
+<testsuite name="tests/auth.setup.ts" timestamp="2026-11-11T10:00:29.273Z" hostname="setup" tests="1" failures="0" skipped="1" time="0" errors="0">
+<testcase name="sign in" classname="tests/auth.setup.ts">
+<properties>
+<property name="skip" value="CLEAN_MODE is on">
+</property>
+<property name="skip" value="no EBAY_EMAIL or EBAY_PASSWORD">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="tests/e2e/purchase-under-budget.spec.ts" timestamp="2026-11-11T10:00:29.273Z" hostname="e2e" tests="1" failures="0" skipped="0" time="5.723" errors="1">
+<testcase name="purchase under budget: headphones-under-150" classname="tests/e2e/purchase-under-budget.spec.ts" time="5.723">
+<properties>
+<property name="warning" value="bot check on first page (HTTP 403), reloading">
+</property>
+</properties>
+<system-out>
+<![CDATA[Login as guest
+Open home page
+guest mode
+Search "wireless headphones" for 3 items up to ILS 150
+Search for "wireless headphones"
+
+[[ATTACHMENT|../test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/test-failed-1.png]]
+
+[[ATTACHMENT|../test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/video.webm]]
+
+[[ATTACHMENT|../test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/error-context.md]]
+
+[[ATTACHMENT|../test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[WARN bot check on first page (HTTP 403), reloading
+]]>
+</system-err>
+<error message="bot check: &quot;Error Page | eBay&quot; at https://www.ebay.com/sch/i.html?_nkw=wireless+headphones&amp;_sacat=0&amp;_from=R40&amp;_trksid=m570.l1313" type="BotCheckError">
+<![CDATA[  [e2e] › tests/e2e/purchase-under-budget.spec.ts:10:5 › purchase under budget: headphones-under-150 › Search "wireless headphones" for 3 items up to ILS 150 › Search for "wireless headphones" 
+
+    BotCheckError: bot check: "Error Page | eBay" at https://www.ebay.com/sch/i.html?_nkw=wireless+headphones&_sacat=0&_from=R40&_trksid=m570.l1313
+
+       at src/utils/botCheck.ts:33
+
+      31 |   }
+      32 |   const httpStatus = status === undefined ? '' : ` (HTTP ${status})`;
+    > 33 |   throw new BotCheckError(`bot check: "${await page.title()}"${httpStatus} at ${page.url()}`);
+         |         ^
+      34 | }
+      35 |
+        at assertNoBotCheck (/Users/doronomer/Documents/Code/ebay-e2e-playwright/src/utils/botCheck.ts:33:9)
+        at /Users/doronomer/Documents/Code/ebay-e2e-playwright/src/components/Header.ts:33:7
+        at /Users/doronomer/Documents/Code/ebay-e2e-playwright/src/flows/SearchFlow.ts:19:7
+        at /Users/doronomer/Documents/Code/ebay-e2e-playwright/tests/e2e/purchase-under-budget.spec.ts:20:20
+
+    attachment #8: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #10: video (video/webm) ─────────────────────────────────────────────────────────────
+    test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/error-context.md
+
+    attachment #12: trace (application/zip) ────────────────────────────────────────────────────────
+    test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/purchase-under-budget-purc-13ee0-budget-headphones-under-150-e2e/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>
