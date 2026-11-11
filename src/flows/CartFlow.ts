@@ -65,8 +65,8 @@ export class CartFlow {
     return this.logger.step(`Item price <= ${this.currency} ${maxPrice}`, async () => {
       const price = await productPage.getPrice(this.currency);
       if (!price) {
-        this.logger.warn(`no ${this.currency} price, skipping check`);
-        return true;
+        this.logger.warn(`no ${this.currency} price, skipping item`);
+        return false;
       }
       this.logger.info(`price: ${price.currency} ${price.value}`);
       if (isWithinBudget(price, maxPrice)) return true;
